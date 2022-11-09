@@ -16,10 +16,10 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 
 **Scenariusz główny:**
 1. [Sprzedający](#ac1) wystawia produkt na aukcję. ([UC1](#uc1))
-2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1))
+2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1) [UC3](#uc3))
 3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))
-4. [Kupujący](#ac2) przekazuje należność Sprzedającemu.
-5. [Sprzedający](#ac1) przekazuje produkt Kupującemu.
+4. [Kupujący](#ac2) przekazuje należność Sprzedającemu. ([UC5](#uc4))
+5. [Sprzedający](#ac1) przekazuje produkt Kupującemu. ([UC2](#uc2))
 
 **Scenariusze alternatywne:** 
 
@@ -50,10 +50,12 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
+* [UC2](#uc2): Przekazanie produktu [Kupującemu](#ac2)
 
 [Kupujący](#ac2)
-* ...
+* [BR1](#br1), [UC3](#uc3): Złożenie oferty wyższej niż aktualnie najwyższa za produkt.
+* [BR2](#br2): Wygranie aukcji
+* [UC4](#uc4): Przekazanie należności [Sprzedającemu](#ac1).
 
 ---
 <a id="uc1"></a>
@@ -77,20 +79,43 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Przekazanie produktu [Kupującemu](#ac2)
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. System werfikuje czy [Sprzedający](#ac1) otrzymał należności za produkt.
+2. System prosi [Kupującego](#ac2) o wskazanie adresu oraz formy dostawy.
+3. System weryfikuje poprawność danych.
+4. System przekazuje produkt na wskazany adres.
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+1.A. Sprzedający nie otrzymał nalezności
+* 1.A.1. System informuje [Kupującego](#ac2) o nieprzekazaniu wpłaty za produkt i prosi o przekaznie należności ([BR3](#br3)).
 
+3.A. Podano niepoprawne lub niekompletne dane adresowe.
+* 3.A.1. System informuje o błędnie podanych danych.
+* 3.A.2. Przejdź do kroku 2.
 ---
 
+<a id="uc3"></a>
+### UC3: Złożenie oferty wyższej niż aktualnie najwyższa.
+
+**Aktorzy:** [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. System prosi [Kupującego](#ac2) o podanie kwoty wyższej niż aktualna.
+3. System weryfikuje poprawność kwoty.
+4. System ustawia podaną kwotę jako obecnie najwyższą ofertę.
+
+**Scenariusze alternatywne:** 
+
+2.A. Podana kwota jest nie więkza niz obecnie najwyższa oferta.
+* 2.A.1. System informuje [Kupującego](#ac2) o za niskiej kwocie.
+* 2.A.2. Wróć do kroku 1.
+
+---
 ## Obiewkty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
 
 ### BO1: Aukcja
