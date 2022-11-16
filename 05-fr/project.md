@@ -116,6 +116,25 @@ Osoba chcąca zakupić [produkt](#bo2) na [aukcji](#bo1-aukcja).
 * 2.A.2. Wróć do kroku 1.
 
 ---
+<a id="uc4"></a>
+### UC4: Przekazanie należności [Sprzedającemu](#ac1)
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. System prosi [Kupującego](#ac2) o wybór płatności.
+3. System weryfikuje poprawność danych.
+4. System przekazuje  [produkt](#bo2) na wskazany adres.
+
+**Scenariusze alternatywne:** 
+
+1.A. Sprzedający nie otrzymał nalezności
+* 1.A.1. System informuje [Kupującego](#ac2) o nieprzekazaniu wpłaty za produkt i prosi o przekaznie należności ([BR3](#br3)).
+
+3.A. Podano niepoprawne lub niekompletne dane adresowe.
+* 3.A.1. System informuje o błędnie podanych danych.
+* 3.A.2. Przejdź do kroku 2.
+---
 ## Obiekty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
 
 <a id="bo1"></a>
