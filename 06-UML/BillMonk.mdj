@@ -3556,7 +3556,7 @@
 												"$ref": "AAAAAAGEgAuULSn1+gE="
 											},
 											"edgePosition": 1,
-											"text": "2 : PozycjaRachunku()"
+											"text": "2 : Iteracja"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -3667,7 +3667,7 @@
 												"$ref": "AAAAAAGEgA1AKioT8AM="
 											},
 											"edgePosition": 1,
-											"text": "3 : UdzialWPozycjiRachunku()"
+											"text": "3 : Iteracja"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -4110,7 +4110,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRlYiR3il1b0="
 							},
-							"name": "PozycjaRachunku()",
+							"name": "Iteracja",
 							"source": {
 								"$ref": "AAAAAAFnRltlsHi3TB4="
 							},
@@ -4124,7 +4124,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRlYiR3il1b0="
 							},
-							"name": "UdzialWPozycjiRachunku()",
+							"name": "Iteracja",
 							"source": {
 								"$ref": "AAAAAAFnRlyuC3jaZoM="
 							},
