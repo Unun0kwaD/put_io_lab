@@ -1,0 +1,16 @@
+1.
+avg =5586
+through=1.6/sec
+
+w metodzie get dodałem "double avg = averageSpendings();" przed pętlą for anu funkcja averageSpendings() nie była wywoływana wiele razy w pętli
+
+po zmianie
+
+avg= 1682
+through= 4.8/sec
+
+2.
+
+through= 1.9/sec
+
+proponuje 35 drukarek
